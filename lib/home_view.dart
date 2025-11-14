@@ -10,7 +10,16 @@ class HomeView extends GetView <HomeController>   {
     return Scaffold(
 
       body: Center(
-        child:Obx(()=>Text(controller.num.toString())) ,
+        child:Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Obx(()=>Text(controller.num.toString())) ,
+            SizedBox(width: 20,),
+            Obx(()=>Text(controller.num1.toString())),
+            SizedBox(width: 20,),
+            Obx(()=>Text(controller.num2.toString())),
+          ],
+        )
       ),
 
       floatingActionButton: Row(
@@ -26,7 +35,7 @@ class HomeView extends GetView <HomeController>   {
 
           ),
           FloatingActionButton.extended( onPressed: ( ){
-            controller.incriment();
+            controller.incriment1();
 
           },
             backgroundColor: Colors.cyanAccent,
@@ -35,7 +44,7 @@ class HomeView extends GetView <HomeController>   {
 
           ),
           FloatingActionButton.extended( onPressed: ( ){
-            controller.incriment();
+            controller.incriment2();
 
           },
             backgroundColor: Colors.cyanAccent,
